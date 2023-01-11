@@ -1,0 +1,95 @@
+/* TEXTO MAQUINA */
+
+.de-span{
+    width: auto;
+    font-size: 31px;
+}
+span{
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 8px solid;
+    width: 34ch;
+
+    animation: typing 3s steps(34), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+@keyframes typing {
+    from {width: 0}
+}
+@keyframes blink{
+    50% {border-color: transparent}
+}
+
+/* ANIMACION BOTONES */
+.boton-encriptador, .boton-desencriptador, .boton-copiar{
+    background: rgb(26, 4, 151);
+	cursor: pointer;
+	border: none;
+	padding: 16px 32px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	position: relative;
+	border-radius: 12px;
+}
+.boton-encriptador::before, .boton-desencriptador::before, .boton-copiar::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+	background-size: 800%;
+	border-radius: 10px;
+	filter: blur(8px);
+	animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing{
+	0%{
+		background-position: 0 0;
+	}
+	50%{
+		background-position: 400% 0;
+	}
+	100%{
+		background-position: 0 0;
+	}
+}
+
+button:active{
+	margin-top:0px;
+	border: 0;
+}
+
+button[disabled=disabled], button:disabled {
+    background-color: gray;
+	border-color: darkgray;
+}
+
+/* FONDO */
+body{
+    background-image: linear-gradient(135deg, #00b7e4, #505488, #2f3f80,#161569,#5a4894,#a950a1, #ff7cae);
+    background-size: 500%;
+    animation: fanimado 10s infinite;
+}
+.animacion{
+    color: white;
+    text-align: center;
+    margin: 300px 0;
+    font-size: 28px;
+}
+@keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
